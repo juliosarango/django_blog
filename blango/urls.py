@@ -30,6 +30,7 @@ urlpatterns = [
     path("post/<slug>/", post_detail, name="blog-post-detail"),
     path("ip/", get_ip),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("allauth.urls")),
     path("accounts/profile/", blango_auth.views.profile, name="profile"),
     path('accounts/', include('django_registration.backends.one_step.urls')),
     path(
@@ -41,6 +42,7 @@ urlpatterns = [
     ),
     
     path("accounts/", include("django_registration.backends.activation.urls")),
+    
 ]
 
 if settings.DEBUG:
