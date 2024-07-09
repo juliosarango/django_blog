@@ -52,7 +52,8 @@ class Dev(Configuration):
       'allauth',
       'allauth.account',
       'allauth.socialaccount',
-      'allauth.socialaccount.providers.google'
+      'allauth.socialaccount.providers.google',
+      'rest_framework'
   ]
 
   MIDDLEWARE = [
@@ -142,7 +143,7 @@ class Dev(Configuration):
 
   DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
   
-  ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
+  ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io", "bettypoem-spiderromeo-80.codio.io"])
 
   X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
   CSRF_COOKIE_SAMESITE = None
